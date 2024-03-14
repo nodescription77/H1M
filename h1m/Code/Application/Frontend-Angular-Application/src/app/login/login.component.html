@@ -1,0 +1,26 @@
+<div class="login-container">
+    <div class="background-image">
+      <!-- Your football image goes here -->
+    </div>
+    <div class="login-form">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>Email/Username</mat-label>
+          <input matInput formControlName="email" type="text" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" required>
+        </mat-form-field>
+  
+        <div class="button-row">
+          <button mat-raised-button class="custom-button" type="submit">Login</button>
+        </div>
+        <div class="forgot-password">
+          <a href="forgot-password">Forgot Password</a>
+        </div>
+      </form>
+    </div>
+</div>
+  

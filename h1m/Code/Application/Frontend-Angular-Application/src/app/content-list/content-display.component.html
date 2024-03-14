@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="search-filter">
+      <mat-form-field>
+        <input matInput placeholder="Search Title" [(ngModel)]="searchText" (input)="applyFiltersAndSort()">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Select Category</mat-label>
+        <mat-select [(ngModel)]="selectedCategory" (selectionChange)="applyFiltersAndSort()">
+          <mat-option value="">All</mat-option>
+          <mat-option *ngFor="let card of cards" [value]="card.category">{{ card.category }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Sort By Date</mat-label>
+        <mat-select [(ngModel)]="selectedSort" (selectionChange)="applyFiltersAndSort()">
+          <mat-option *ngFor="let sort of sortOptions" [value]="sort.value">{{ sort.label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div class="card-container" (scroll)="onScroll()">
+      <mat-card *ngFor="let card of displayedCards" class="card" (click)="openBlog(card)">
+        <mat-card-title>{{ card.title }}</mat-card-title>
+        <p>{{ card.category }}</p>
+        <p>{{ card.date | date }}</p>
+        <div>
+          <i class="fas fa-eye"></i> 
+          <span style="padding-left: 10px;">{{ card.view_count || '0' }}</span>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  

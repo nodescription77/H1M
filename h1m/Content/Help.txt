@@ -1,0 +1,7 @@
+1. Select the location address and type cmd -> press enter
+2. type the command git branch
+3. The 'dev' branch should always be green
+4. type: git add . -> press enter
+5. type: git commit -m "Type your message/comment - what file have you added,etc." -> press enter
+6. git pull origin dev
+7. git push origin dev

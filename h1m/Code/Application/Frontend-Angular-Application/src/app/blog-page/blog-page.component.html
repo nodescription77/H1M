@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="title">{{ data.title || '-' }}</div>
+    <div class="details">
+      <div class="category">Category:</div>
+      <div class="category-value">{{ data.category || '-'}}</div>
+    </div>
+    <div class="details">
+        <div class="date">Date:</div>
+        <div class="date-value">{{ (data.date | date) || '-' }}</div>
+    </div>
+    <div class="text" *ngFor="let paragraph of paragraphs" [innerHTML]="paragraph"></div>
+  </div>
+  
